@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Süryani Kulüpler Basketbol Turnuvası</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="club-branding">
+                <img src="resimler/logo.png" alt="Kulüp Logosu" class="main-club-logo">
+                <span class="logo-text">BASKETBOL TURNUVASI</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active-tab-btn" onclick="sekmeDegistir('maclar', this)">Maçlar</a></li>
+                    <li><a href="#" onclick="sekmeDegistir('puan-durumu', this)">Puan Durumu</a></li>
+                    <li><a href="#" onclick="sekmeDegistir('krallik', this)">Sayı Krallığı</a></li>
+                    <li><a href="#" onclick="sekmeDegistir('takimlar', this)">Takımlar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="maclar" class="tab-content active-tab">
+            <div class="match-header">
+                <h2>Fikstür ve Sonuçlar</h2>
+                <select id="tarih-secici" onchange="tariheGoreMaclariGetir(this.value)">
+                    <option value="16 Nisan 2026 Perşembe">16 Nisan 2026 Perşembe</option>
+                    <option value="21 Nisan 2026 Salı">21 Nisan 2026 Salı</option>
+                    <option value="24 Nisan 2026 Cuma" selected>24 Nisan 2026 Cuma</option>
+                    <option value="28 Nisan 2026 Salı">28 Nisan 2026 Salı</option>
+                    <option value="30 Nisan 2026 Perşembe">30 Nisan 2026 Perşembe</option>
+                    <option value="3 Mayıs 2026 Pazar">3 Mayıs 2026 Pazar</option>
+                </select>
+            </div>
+            
+            <div class="pota-container">
+                <div class="pota-column">
+                    <h3 class="pota-title">POTA 1</h3>
+                    <div id="pota1-list"></div>
+                </div>
+                <div class="pota-column">
+                    <h3 class="pota-title">POTA 2</h3>
+                    <div id="pota2-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="puan-durumu" class="tab-content">
+            <h2>Puan Durumu</h2>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Takım</th><th>O</th><th>G</th><th>M</th><th>A</th><th>Y</th><th>Av</th><th>P</th>
+                        </tr>
+                    </thead>
+                    <tbody id="puan-tablosu"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="krallik" class="tab-content">
+            <h2>Sayı Krallığı</h2>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Oyuncu</th><th>Takım</th><th>Sayı</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sayi-tablosu"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="takimlar" class="tab-content">
+            <h2>Takımlar ve Kadrolar</h2>
+            <div id="takim-listesi" class="team-grid"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
